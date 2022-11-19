@@ -61,21 +61,17 @@ const regData = [
 
 function selectRegion(params) {
   tuman.innerHTML = "";
+  secondId.innerHTML = "";
   params.forEach((element) => {
     if (classViloyat.value == element.name) {
       classTuman.innerHTML += `<option> ${element.rayon} </option>`;
     }
-  });
-}
-
-function selectRegionFirst(params) {
-  secondId.innerHTML = "";
-  params.forEach((element) => {
     if (fisrtId.value == element.name) {
       secondId.innerHTML += `<option> ${element.rayon} </option>`;
     }
   });
 }
+
 
 const showBtn = document.getElementById('show-btn')
 const modal = document.getElementById('modal')
@@ -99,7 +95,7 @@ document.addEventListener('keydown', (e) => {
 })
 
 function cislo() {
-  if (event.keyCode < 48 || event.keyCode > 57 || event.keyCode == '.')
+  if (event.keyCode < 48 || event.keyCode > 57 || event.keyCode == 190)
     event.returnValue = false;
 }
 

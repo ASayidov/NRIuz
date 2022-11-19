@@ -17,17 +17,17 @@
     <h1>NRI uz</h1>
     <div class="first_search">
       <form action="./" method="get">
-        <p>Номер БС:</p>
-        <input onKeyPress="cislo()" type="number" maxlength="4" minlength="3" placeholder="номер БС" />
-        <p>Выберите область:</p>
-        <select onchange="selectRegionFirst(regData)" id="filtrOne" class="viloyat" autofocus>
+        <span> Номер БС:</span>
+        <input onKeyPress="cislo()" type="text" maxlength="4" minlength="3" placeholder="номер БС" />
+        <span> Выберите область:</span>
+        <select onchange="selectRegion(regData)" id="filtrOne" class="viloyat" autofocus>
           <option value=""></option>
           <option value="Andijan">Андижан</option>
           <option value="Fergana">Фергана</option>
           <option value="Namangan">Наманган</option>
           <option value="Kokand">Коканд</option>
         </select>
-        <p>Выберите район:</p>
+        <span>Выберите район:</span>
         <select class="tuman" id="filtrTwo"></select>
         <button class="btn_filtr">Отфильтровать</button>
       </form>
@@ -41,47 +41,38 @@
 
       <form action="./" method="post" class="form_add">
         <p>Название сайта:</p>
-        <input type="text" placeholder="вводите название сайта" maxlength="11" minlength="1" />
+        <input type="text" placeholder="название БС" maxlength="11" minlength="1" />
 
         <p>Номер БС:</p>
-        <input type="number" onKeyPress="cislo()" maxlength="4" minlength="3" placeholder="номер БС" />
-        <p>UMTS bisektor:</p>
-        <input type="text" placeholder="азимуты пример: 0-120-240" maxlength="11" minlength="1" />
-        <br />
-        <br />
+        <input onKeyPress="cislo()" type="text" onKeyPress="cislo()" maxlength="4" minlength="3"
+          placeholder="номер БС" />
 
         <p>Latitude:</p>
         <input onkeypress="return check(this,event)" type="number" maxlength="30" minlength="3"
-          placeholder="вводите координаты" />
+          placeholder="40.000000" />
         <p>Longitude:</p>
-        <input onkeypress="return check(this,event)" type="number" maxlength="30" minlength="3"
-          placeholder="вводите координаты" />
-
+        <input onkeypress="return check(this,event)" type="number" maxlength="10" minlength="3"
+          placeholder="70.000000" />
+        <br><br>
+        <p>UMTS bisektor:</p>
+        <input onKeyPress="cislo()" type="text" placeholder="0-120-240" maxlength="11" minlength="1" />
         <p>GSM 900:</p>
-        <input type="text" placeholder="азимуты пример: 0-120-240" autofocus maxlength="11" minlength="1" />
-        <br />
-        <br />
+        <input type="text" placeholder="0-120-240" autofocus maxlength="11" minlength="1" />
         <p>GSM 1800:</p>
-        <input type="text" placeholder="азимуты пример: 0-120-240" maxlength="11" minlength="1" />
-
+        <input type="text" placeholder="0-120-240" maxlength="11" minlength="1" />
         <p>UMTS 900:</p>
-        <input type="text" placeholder="азимуты пример: 0-120-240" maxlength="11" minlength="1" />
+        <input type="text" placeholder="0-120-240" maxlength="11" minlength="1" />
         <p>UMTS 2100:</p>
-        <input type="text" placeholder="азимуты пример: 0-120-240" maxlength="11" minlength="1" />
-
-        <br /><br />
+        <input type="text" placeholder="0-120-240" maxlength="11" minlength="1" />
         <p>LTE 800:</p>
-        <input type="text" placeholder="азимуты пример: 0-120-240" maxlength="11" minlength="1" />
+        <input type="text" placeholder="0-120-240" maxlength="11" minlength="1" />
         <p>LTE 1800:</p>
-        <input type="text" placeholder="азимуты пример: 0-120-240" maxlength="11" minlength="1" />
+        <input type="text" placeholder="0-120-240" maxlength="11" minlength="1" />
         <p>LTE 2600:</p>
-        <input type="text" placeholder="азимуты пример: 0-120-240" maxlength="11" minlength="1" />
+        <input type="text" placeholder="0-120-240" maxlength="11" minlength="1" />
         <br />
         <br />
-        <p>Номер Модема:</p>
-        <input type="number" maxlength="12" minlength="3" value="998" placeholder="вводите номер модема" />
-
-        <p>Выберите область:</p>
+        <span>Выбрать область:</span>
         <select onchange="selectRegion(regData)" class="viloyat" id="viloyat" autofocus>
           <option value=""></option>
           <option value="Andijan">Андижан</option>
@@ -89,17 +80,20 @@
           <option value="Namangan">Наманган</option>
           <option value="Kokand">Коканд</option>
         </select>
-        <p>Выберите район:</p>
+        <span>Выбрать район:</span>
         <select id="tuman" class="tuman"></select>
+        <span>Модем:</span>
+        <input class="modem_number_input" type="number" maxlength="12" minlength="3" placeholder="+9989" />
+
         <br />
         <br />
 
-        <p>Адрес БС:</p>
+        <span>Адрес БС:</span>
         <input id="adress" type="text" placeholder="вводите адрес сайта" />
 
         <br />
         <br />
-        <button id="send">Отправить</button>
+        <button id="send">Изменить/добавить</button>
         <br />
         <br />
       </form>
