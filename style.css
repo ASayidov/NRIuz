@@ -1,0 +1,59 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+.add_new,
+.first_search {
+  margin: 0 auto;
+  width: 80%;
+  padding: 3rem;
+  background-color: antiquewhite;
+  box-shadow: 0 2px 2px #ccc;
+}
+
+.first_search input,
+.tuman,
+.viloyat {
+  width: 10%;
+  padding: 0.5rem;
+}
+.btn_filtr {
+  margin-left: 1rem;
+  cursor: pointer;
+}
+input {
+  padding: 0.5rem;
+  width: 13rem;
+}
+
+#send {
+  margin: 0 40%;
+  padding: 1rem;
+  width: 13rem;
+  cursor: pointer;
+}
+
+p {
+  display: inline-block;
+  width: 5rem;
+  margin: 0.5rem;
+}
+
+#viloyat,
+#tuman {
+  padding: 0.5rem;
+  width: 14.3rem;
+}
+
+.btn_filtr {
+  padding: 0.5rem;
+}
+
+#adress {
+  width: 64%;
+}
