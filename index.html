@@ -18,7 +18,7 @@
     <div class="first_search">
       <form action="./" method="get">
         <p>Номер БС:</p>
-        <input type="number" maxlength="4" minlength="3" placeholder="номер БС" />
+        <input onKeyPress="cislo()" type="number" maxlength="4" minlength="3" placeholder="номер БС" />
         <p>Выберите область:</p>
         <select onchange="selectRegionFirst(regData)" id="filtrOne" class="viloyat" autofocus>
           <option value=""></option>
@@ -44,16 +44,18 @@
         <input type="text" placeholder="вводите название сайта" maxlength="11" minlength="1" />
 
         <p>Номер БС:</p>
-        <input type="number" maxlength="4" minlength="3" placeholder="номер БС" />
+        <input type="number" onKeyPress="cislo()" maxlength="4" minlength="3" placeholder="номер БС" />
         <p>UMTS bisektor:</p>
         <input type="text" placeholder="азимуты пример: 0-120-240" maxlength="11" minlength="1" />
         <br />
         <br />
 
         <p>Latitude:</p>
-        <input type="number" maxlength="30" minlength="3" placeholder="вводите координаты" />
+        <input onkeypress="return check(this,event)" type="number" maxlength="30" minlength="3"
+          placeholder="вводите координаты" />
         <p>Longitude:</p>
-        <input type="number" maxlength="30" minlength="3" placeholder="вводите координаты" />
+        <input onkeypress="return check(this,event)" type="number" maxlength="30" minlength="3"
+          placeholder="вводите координаты" />
 
         <p>GSM 900:</p>
         <input type="text" placeholder="азимуты пример: 0-120-240" autofocus maxlength="11" minlength="1" />

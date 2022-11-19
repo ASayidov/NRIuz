@@ -97,3 +97,16 @@ overlay.addEventListener('click', add)
 document.addEventListener('keydown', (e) => {
   if (e.key == 'Escape') add()
 })
+
+function cislo() {
+  if (event.keyCode < 48 || event.keyCode > 57 || event.keyCode == '.')
+    event.returnValue = false;
+}
+
+function check(Sender, e) {
+  var key = e.which ? e.which : e.keyCode;
+  if (key == 44) {
+    Sender.value += '.';
+    return false;
+  }
+}
