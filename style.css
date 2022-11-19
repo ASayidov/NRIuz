@@ -37,7 +37,7 @@ h1 {
 .add_new #viloyat,
 .add_new #tuman {
   width: 12.5%;
-  padding: 0.5rem;
+  padding: 0.5rem 0;
 }
 
 #send {
