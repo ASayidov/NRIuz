@@ -14,21 +14,30 @@ h1 {
   padding: 1rem;
   background-color: antiquewhite;
   box-shadow: 0 2px 2px #ccc;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
 }
 
 .first_search input,
 .tuman,
 .viloyat {
-  width: 10%;
-  padding: 0.5rem;
+  width: 12%;
+  padding: 0.1rem;
 }
 .btn_filtr {
   margin-left: 1rem;
   cursor: pointer;
 }
-input {
+.add_new input {
   padding: 0.5rem;
-  width: 13rem;
+  width: 10.5%;
+}
+
+.add_new #viloyat,
+.add_new #tuman {
+  width: 12.5%;
+  padding: 0.5rem;
 }
 
 #send {
@@ -51,9 +60,9 @@ p {
 }
 
 .btn_filtr {
-  padding: 0.5rem;
+  padding: 0.2rem;
 }
 
 #adress {
-  width: 64%;
+  width: 60%;
 }
