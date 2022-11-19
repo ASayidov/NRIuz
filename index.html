@@ -5,94 +5,106 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./style.css" />
   <title>NRIuz</title>
 </head>
 
 <body>
-  <h1>NRI uz</h1>
-  <div class="first_search">
-    <form action="./" method="get">
-      <p>Номер БС:</p>
-      <input type="number" maxlength="4" minlength="3" placeholder="номер БС" />
-      <p>Выберите область:</p>
-      <select onchange="selectRegionFirst(regData)" id="filtrOne" class="viloyat" autofocus>
-        <option value=""></option>
-        <option value="Andijan">Андижан</option>
-        <option value="Fergana">Фергана</option>
-        <option value="Namangan">Наманган</option>
-        <option value="Kokand">Коканд</option>
-      </select>
-      <p>Выберите район:</p>
-      <select class="tuman" id="filtrTwo"></select>
-      <button class="btn_filtr">Отфильтровать</button>
-    </form>
+  <div class="wrapper">
+    <h1>NRI uz</h1>
+    <div class="first_search">
+      <form action="./" method="get">
+        <p>Номер БС:</p>
+        <input type="number" maxlength="4" minlength="3" placeholder="номер БС" />
+        <p>Выберите область:</p>
+        <select onchange="selectRegionFirst(regData)" id="filtrOne" class="viloyat" autofocus>
+          <option value=""></option>
+          <option value="Andijan">Андижан</option>
+          <option value="Fergana">Фергана</option>
+          <option value="Namangan">Наманган</option>
+          <option value="Kokand">Коканд</option>
+        </select>
+        <p>Выберите район:</p>
+        <select class="tuman" id="filtrTwo"></select>
+        <button class="btn_filtr">Отфильтровать</button>
+      </form>
+
+    </div>
+    <br />
+
+    <button class="btn show-btn" id="show-btn">Show Modal</button>
+
+    <div class="add_new hidden" id="modal">
+
+      <form action="./" method="post" class="form_add">
+        <p>Название сайта:</p>
+        <input type="text" placeholder="вводите название сайта" maxlength="11" minlength="1" />
+
+        <p>Номер БС:</p>
+        <input type="number" maxlength="4" minlength="3" placeholder="номер БС" />
+        <p>UMTS bisektor:</p>
+        <input type="text" placeholder="азимуты пример: 0-120-240" maxlength="11" minlength="1" />
+        <br />
+        <br />
+
+        <p>Latitude:</p>
+        <input type="number" maxlength="30" minlength="3" placeholder="вводите координаты" />
+        <p>Longitude:</p>
+        <input type="number" maxlength="30" minlength="3" placeholder="вводите координаты" />
+
+        <p>GSM 900:</p>
+        <input type="text" placeholder="азимуты пример: 0-120-240" autofocus maxlength="11" minlength="1" />
+        <br />
+        <br />
+        <p>GSM 1800:</p>
+        <input type="text" placeholder="азимуты пример: 0-120-240" maxlength="11" minlength="1" />
+
+        <p>UMTS 900:</p>
+        <input type="text" placeholder="азимуты пример: 0-120-240" maxlength="11" minlength="1" />
+        <p>UMTS 2100:</p>
+        <input type="text" placeholder="азимуты пример: 0-120-240" maxlength="11" minlength="1" />
+
+        <br /><br />
+        <p>LTE 800:</p>
+        <input type="text" placeholder="азимуты пример: 0-120-240" maxlength="11" minlength="1" />
+        <p>LTE 1800:</p>
+        <input type="text" placeholder="азимуты пример: 0-120-240" maxlength="11" minlength="1" />
+        <p>LTE 2600:</p>
+        <input type="text" placeholder="азимуты пример: 0-120-240" maxlength="11" minlength="1" />
+        <br />
+        <br />
+        <p>Номер Модема:</p>
+        <input type="number" maxlength="12" minlength="3" value="998" placeholder="вводите номер модема" />
+
+        <p>Выберите область:</p>
+        <select onchange="selectRegion(regData)" class="viloyat" id="viloyat" autofocus>
+          <option value=""></option>
+          <option value="Andijan">Андижан</option>
+          <option value="Fergana">Фергана</option>
+          <option value="Namangan">Наманган</option>
+          <option value="Kokand">Коканд</option>
+        </select>
+        <p>Выберите район:</p>
+        <select id="tuman" class="tuman"></select>
+        <br />
+        <br />
+
+        <p>Адрес БС:</p>
+        <input id="adress" type="text" placeholder="вводите адрес сайта" />
+
+        <br />
+        <br />
+        <button id="send">Отправить</button>
+        <br />
+        <br />
+      </form>
+      <button class="btn cancel" id="cancel"><i class="fas fa-close"></i></button>
+    </div>
   </div>
-  <br />
-
-  <div class="add_new">
-    <form action="./" method="post">
-      <p>Название сайта:</p>
-      <input type="text" placeholder="вводите название сайта" maxlength="11" minlength="1" />
-
-      <p>Номер БС:</p>
-      <input type="number" maxlength="4" minlength="3" placeholder="номер БС" />
-      <p>UMTS bisektor:</p>
-      <input type="text" placeholder="азимуты пример: 0-120-240" maxlength="11" minlength="1" />
-      <br />
-      <br />
-
-      <p>Latitude:</p>
-      <input type="number" maxlength="30" minlength="3" placeholder="вводите координаты" />
-      <p>Longitude:</p>
-      <input type="number" maxlength="30" minlength="3" placeholder="вводите координаты" />
-
-      <p>GSM 900:</p>
-      <input type="text" placeholder="азимуты пример: 0-120-240" autofocus maxlength="11" minlength="1" />
-      <br />
-      <br />
-      <p>GSM 1800:</p>
-      <input type="text" placeholder="азимуты пример: 0-120-240" maxlength="11" minlength="1" />
-
-      <p>UMTS 900:</p>
-      <input type="text" placeholder="азимуты пример: 0-120-240" maxlength="11" minlength="1" />
-      <p>UMTS 2100:</p>
-      <input type="text" placeholder="азимуты пример: 0-120-240" maxlength="11" minlength="1" />
-
-      <br /><br />
-      <p>LTE 800:</p>
-      <input type="text" placeholder="азимуты пример: 0-120-240" maxlength="11" minlength="1" />
-      <p>LTE 1800:</p>
-      <input type="text" placeholder="азимуты пример: 0-120-240" maxlength="11" minlength="1" />
-      <p>LTE 2600:</p>
-      <input type="text" placeholder="азимуты пример: 0-120-240" maxlength="11" minlength="1" />
-      <br />
-      <br />
-      <p>Номер Модема:</p>
-      <input type="number" maxlength="12" minlength="3" value="998" placeholder="вводите номер модема" />
-
-      <p>Выберите область:</p>
-      <select onchange="selectRegion(regData)" class="viloyat" id="viloyat" autofocus>
-        <option value=""></option>
-        <option value="Andijan">Андижан</option>
-        <option value="Fergana">Фергана</option>
-        <option value="Namangan">Наманган</option>
-        <option value="Kokand">Коканд</option>
-      </select>
-      <p>Выберите район:</p>
-      <select id="tuman" class="tuman"></select>
-      <br />
-      <br />
-
-      <p>Адрес БС:</p>
-      <input id="adress" type="text" placeholder="вводите адрес сайта" />
-
-      <br />
-      <br />
-      <button id="send">Отправить</button> <br />
-      <br />
-    </form>
-  </div>
+  <div class="overlay hidden" id="overlay"></div>
   <script src="./app.js"></script>
 </body>
 

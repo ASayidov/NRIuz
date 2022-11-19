@@ -76,3 +76,24 @@ function selectRegionFirst(params) {
     }
   });
 }
+
+const showBtn = document.getElementById('show-btn')
+const modal = document.getElementById('modal')
+const overlay = document.getElementById('overlay')
+const cancel = document.getElementById('cancel')
+
+const remove = () => (
+  modal.classList.remove('hidden'),
+  overlay.classList.remove('hidden')
+)
+const add = () => (
+  modal.classList.add('hidden'),
+  overlay.classList.add('hidden')
+)
+showBtn.addEventListener("click", remove);
+cancel.addEventListener('click', add)
+overlay.addEventListener('click', add)
+
+document.addEventListener('keydown', (e) => {
+  if (e.key == 'Escape') add()
+})
